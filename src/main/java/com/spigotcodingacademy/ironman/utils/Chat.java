@@ -10,6 +10,7 @@ public class Chat {
 
     public static String prefix = color("&7[&c&lIronMan&7] ");
     public static String jarvis = color("&7[&c&lJ.A.R.V.I.S&7] ");
+    public static String jarvisMenu = color("&c&lJ.A.R.V.I.S ");
     public static String perm = color(prefix + "&cInsufficient permissions!");
 
     public static void msg(Player player, String... message) {

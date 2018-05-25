@@ -29,9 +29,8 @@ public class PlayerLowHealth implements Listener {
                         @Override
                         public void run() {
                             player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, Integer.MAX_VALUE, 1));
-                            player.sendMessage("added potion effect");
                         }
-                    }.runTaskLater(Main.getPlugin(), 2*20);
+                    }.runTaskLater(Main.getPlugin(), 20);
                 }
             }
         }

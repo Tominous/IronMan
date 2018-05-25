@@ -1,5 +1,8 @@
 package com.spigotcodingacademy.ironman.cmds;
 
+import com.spigotcodingacademy.ironman.Main;
+import com.spigotcodingacademy.ironman.Menus;
+import com.spigotcodingacademy.ironman.manager.Data;
 import com.spigotcodingacademy.ironman.utils.Chat;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -25,7 +28,7 @@ public class SuitCmds implements CommandExecutor {
                 Chat.msg(
                         player,
                         Chat.prefix + "&7Suit commands:",
-                        "&8&l >> &7/suits",
+                        "&8&l >> &7/suits menu",
                         "&8&l >> &7/suits <Player> <SuitName>",
                         "&8&l >> &7/suits list",
                         "&8&l >> &7/suits eject"
@@ -33,12 +36,25 @@ public class SuitCmds implements CommandExecutor {
                 return true;
             }
 
+            if (args[0].equalsIgnoreCase("menu")) {
+                Menus.createTestMenu(player);
+            }
+
             if (args[0].equalsIgnoreCase("list")) {
                 Chat.msg(
                         player,
                         Chat.prefix + "&7Suit list:",
-                        "&8&l >> &7Mark 1"
+                        "&8&l >> &7Mk 1"
                 );
+            }
+
+            if (args[0].equalsIgnoreCase("eject")) {
+                if (Data.Suit.contains(player)){
+                    Main.getSuitManager().eject(player);
+                    return true;
+                } else{
+                    Chat.msg(player, Chat.jarvis + "&4No suit to eject from!");
+                }
             }
         }
         return false;

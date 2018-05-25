@@ -1,10 +1,12 @@
 package com.spigotcodingacademy.ironman;
 
+import com.spigotcodingacademy.ironman.manager.Data;
+import com.spigotcodingacademy.ironman.utils.Chat;
+import com.spigotcodingacademy.ironman.utils.ItemStackBuilder;
 import com.spigotcodingacademy.ironman.utils.menu.Gui;
 import com.spigotcodingacademy.ironman.utils.menu.GuiItem;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 
 /**
  * Created by IVenomX (BantaGaming)
@@ -12,35 +14,53 @@ import org.bukkit.inventory.ItemStack;
 public class Menus {
 
     public static void createTestMenu(Player player) {
-        Gui gui = new Gui("Test", 1);
+        Gui gui = new Gui(Chat.jarvisMenu + "&8Suit Selection", 1);
 
         gui.setItems(
                 new GuiItem<>(
-                        new ItemStack(Material.GLASS),
+                        new ItemStackBuilder(Material.IRON_CHESTPLATE)
+                                .setName("&8&lMark 1")
+                                .addLore("Code Name: None")
+                                .addLore("Armour Type: None")
+                                .build(),
                         (clicker, event) -> {
-                            clicker.sendMessage("you clicked glass");
-                            event.setCancelled(true);
+                            if (Data.Suit.contains(clicker)) {
+                                Main.getSuitManager().eject(clicker);
+                                Main.getSuitManager().apply(clicker);
+                                clicker.sendMessage(Chat.jarvis + "Mark 1 is on its way!");
+                                clicker.closeInventory();
+                                return;
+                            }
+                            Data.Suit.add(clicker);
+                            Main.getSuitManager().apply(clicker);
+                            clicker.sendMessage(Chat.jarvis + "Mark 1 is on its way!");
+                            clicker.closeInventory();
                         }
                 ),
 
                 new GuiItem<>(
-                        new ItemStack(Material.REDSTONE),
+                        new ItemStackBuilder(Material.DIAMOND_CHESTPLATE)
+                                .setName("&8&lMark 42")
+                                .addLore("Code Name: The Prodigal Son")
+                                .addLore("Armour Type: Prehensile Suit")
+                                .build(),
                         (clicker, event) -> {
-                            clicker.sendMessage("you clicked redstone");
-                            event.setCancelled(true);
-                        }
-                ),
+                            if (Data.Suit.contains(clicker)) {
+                                Main.getSuitManager().eject(clicker);
+                                Main.getSuitManager().apply(clicker);
+                                clicker.sendMessage(Chat.jarvis + "Mark 42 is on its way!");
+                                clicker.closeInventory();
+                                return;
+                            }
 
-                new GuiItem<>(
-                        new ItemStack(Material.BOW),
-                        (clicker, event) -> {
-                            clicker.sendMessage("you clicked a bow");
-                            event.setCancelled(true);
+                            Data.Suit.add(clicker);
+                            Main.getSuitManager().apply(clicker);
+                            clicker.sendMessage(Chat.jarvis + "Mark 42 is on its way!");
+                            clicker.closeInventory();
                         }
                 )
-        );
 
-        gui.setCloseAction((closer, e) -> closer.sendMessage("closed"));
+        );
 
         gui.open(player);
 

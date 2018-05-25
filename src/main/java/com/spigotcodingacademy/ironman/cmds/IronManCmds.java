@@ -1,5 +1,6 @@
 package com.spigotcodingacademy.ironman.cmds;
 
+import com.spigotcodingacademy.ironman.Menus;
 import com.spigotcodingacademy.ironman.manager.Data;
 import com.spigotcodingacademy.ironman.utils.Chat;
 import org.bukkit.command.Command;
@@ -42,6 +43,7 @@ public class IronManCmds implements CommandExecutor{
 
                 if (args[0].equalsIgnoreCase("version")) {
                     Chat.msg(player, Chat.prefix + "Version: " + Chat.version());
+                    Menus.createTestMenu(player);
 
                     if (Data.Suit.contains(player)) {
                         Data.Suit.remove(player);

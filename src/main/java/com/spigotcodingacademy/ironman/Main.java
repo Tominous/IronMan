@@ -6,6 +6,7 @@ import com.spigotcodingacademy.ironman.listeners.PlayerJoin;
 import com.spigotcodingacademy.ironman.listeners.PlayerDeath;
 import com.spigotcodingacademy.ironman.listeners.j.a.r.v.i.s.PlayerHeal;
 import com.spigotcodingacademy.ironman.listeners.j.a.r.v.i.s.PlayerLowHealth;
+import com.spigotcodingacademy.ironman.utils.menu.GuiListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin{
@@ -19,6 +20,7 @@ public class Main extends JavaPlugin{
         getServer().getPluginManager().registerEvents(new PlayerHeal(), this);
         getServer().getPluginManager().registerEvents(new PlayerLowHealth(), this);
         getServer().getPluginManager().registerEvents(new PlayerDeath(), this);
+        getServer().getPluginManager().registerEvents(new GuiListener(), this);
 
         getCommand("ironman").setExecutor(new IronManCmds());
         getCommand("suits").setExecutor(new SuitCmds());

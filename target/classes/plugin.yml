@@ -1,0 +1,6 @@
+name: IronMan
+main: com.spigotcodingacademy.ironman.Main
+version: 1.0
+commands:
+   ironman:
+   suits:

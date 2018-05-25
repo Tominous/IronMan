@@ -16,10 +16,13 @@ public class Chat {
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
+    public static String perm(String message) {
+        return color(prefix + "&cInsufficient permissions!");
+    }
+
     public static String version() {
         return Bukkit.getServer().getPluginManager().getPlugin("IronMan").getDescription().getVersion();
     }
 
     public static String prefix = color("&7[&c&lIronMan&7] ");
-
 }

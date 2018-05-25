@@ -1,5 +1,6 @@
 package com.spigotcodingacademy.ironman;
 
+import com.spigotcodingacademy.ironman.cmds.IronManCmds;
 import com.spigotcodingacademy.ironman.listeners.PlayerJoin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,6 +12,8 @@ public class Main extends JavaPlugin{
         plugin = this;
 
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+
+        getCommand("ironman").setExecutor(new IronManCmds());
 
     }
 

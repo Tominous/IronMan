@@ -43,12 +43,6 @@ public class IronManCmds implements CommandExecutor{
 
                 if (args[0].equalsIgnoreCase("version")) {
                     Chat.msg(player, Chat.prefix + "Version: " + Chat.version());
-
-                    if (Data.Suit.contains(player)) {
-                        Data.Suit.remove(player);
-                        return true;
-                    }
-                    Data.Suit.add(player);
                     return true;
                 }
 

@@ -53,25 +53,23 @@ public class SuitManager {
 
         Location location = new Location(player.getWorld(),x, y, z);
 
-        Delay.until(20*1, () -> {
-            player.getWorld().createExplosion(location, 0);
-        });
+        Delay.until(20, () -> player.getWorld().createExplosion(location, 0));
 
     }
 
-    public void setHelemet(Player player) {
+    private void setHelemet(Player player) {
         player.getInventory().setHelmet(new ItemStackBuilder(Material.IRON_HELMET).setName("&8&lMark 1").build());
     }
 
-    public void setChestplate(Player player) {
+    private void setChestplate(Player player) {
         player.getInventory().setChestplate(new ItemStackBuilder(Material.IRON_CHESTPLATE).setName("&8&lMark 1").build());
     }
 
-    public void setLeggings(Player player) {
+    private void setLeggings(Player player) {
         player.getInventory().setLeggings(new ItemStackBuilder(Material.IRON_LEGGINGS).setName("&8&lMark 1").build());
     }
 
-    public void setBoots(Player player) {
+    private void setBoots(Player player) {
         player.getInventory().setBoots(new ItemStackBuilder(Material.IRON_BOOTS).setName("&8&lMark 1").build());
     }
 }

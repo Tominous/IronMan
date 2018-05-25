@@ -1,6 +1,7 @@
 package com.spigotcodingacademy.ironman;
 
 import com.spigotcodingacademy.ironman.cmds.IronManCmds;
+import com.spigotcodingacademy.ironman.cmds.SuitCmds;
 import com.spigotcodingacademy.ironman.listeners.PlayerJoin;
 import com.spigotcodingacademy.ironman.listeners.PlayerDeath;
 import com.spigotcodingacademy.ironman.listeners.j.a.r.v.i.s.PlayerHeal;
@@ -20,6 +21,7 @@ public class Main extends JavaPlugin{
         getServer().getPluginManager().registerEvents(new PlayerDeath(), this);
 
         getCommand("ironman").setExecutor(new IronManCmds());
+        getCommand("suit").setExecutor(new SuitCmds());
 
     }
 

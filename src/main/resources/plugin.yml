@@ -3,3 +3,4 @@ main: com.spigotcodingacademy.ironman.Main
 version: ${project.version}
 commands:
    ironman:
+   suit:

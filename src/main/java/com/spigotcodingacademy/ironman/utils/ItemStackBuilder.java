@@ -2,6 +2,7 @@ package com.spigotcodingacademy.ironman.utils;
 
 import lombok.Getter;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -52,6 +53,12 @@ public class ItemStackBuilder {
 
     public ItemStackBuilder withData(int data) {
         itemStack.setDurability((short) data);
+        return this;
+    }
+
+    public ItemStackBuilder addEnchant(Enchantment enchantment, int level) {
+        itemStack.addUnsafeEnchantment(enchantment, level);
+
         return this;
     }
 

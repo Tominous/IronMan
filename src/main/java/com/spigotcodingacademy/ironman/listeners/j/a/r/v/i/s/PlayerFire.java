@@ -40,6 +40,15 @@ public class PlayerFire implements Listener {
                         );
                     }
                 }
+
+                if (event.getCause() == EntityDamageEvent.DamageCause.DROWNING) {
+                    if (!Data.Suit.contains(player)) {
+                        Chat.msg(
+                                player,
+                                Chat.jarvis + ""
+                        );
+                    }
+                }
             }
         }
     }

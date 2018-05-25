@@ -17,9 +17,7 @@ public class Chat {
         Arrays.stream(message).forEach(s -> player.sendMessage(color(s)));
     }
 
-    public static String color(String message) {
-        return ChatColor.translateAlternateColorCodes('&', message);
-    }
+    public static String color(String message) { return ChatColor.translateAlternateColorCodes('&', message);}
 
     public static String version() {
         return Bukkit.getServer().getPluginManager().getPlugin("IronMan").getDescription().getVersion();

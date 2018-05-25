@@ -42,16 +42,6 @@ public class Menus {
 
         gui.setCloseAction((closer, e) -> closer.sendMessage("closed"));
 
-        /*
-        gui.setItem(
-                0,
-                new ItemStack(Material.GRASS),
-                (clicker, event) -> {
-                    clicker.sendMessage("you clicked grass");
-                    event.setCancelled(true);
-                });
-                */
-
         gui.open(player);
 
     }

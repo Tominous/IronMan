@@ -21,7 +21,7 @@ public class Main extends JavaPlugin{
         getServer().getPluginManager().registerEvents(new PlayerDeath(), this);
 
         getCommand("ironman").setExecutor(new IronManCmds());
-        getCommand("suit").setExecutor(new SuitCmds());
+        getCommand("suits").setExecutor(new SuitCmds());
 
     }
 

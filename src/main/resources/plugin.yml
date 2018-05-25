@@ -1,0 +1,4 @@
+name: ${project.name}
+main: com.spigotcodingacademy.ironman.Main
+version: ${project.version}
+commands:

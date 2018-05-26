@@ -1,7 +1,5 @@
 package com.spigotcodingacademy.ironman.cmds;
 
-import com.spigotcodingacademy.ironman.Menus;
-import com.spigotcodingacademy.ironman.manager.Data;
 import com.spigotcodingacademy.ironman.utils.Chat;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -55,6 +53,15 @@ public class IronManCmds implements CommandExecutor{
                         Chat.msg(player, Chat.perm);
                         return true;
                     }
+                }
+
+                if (args[0].equalsIgnoreCase("commands")) {
+                    Chat.msg(
+                            player,
+                            Chat.prefix + "&7Commands found:",
+                            "&8&l >> &7/ironman",
+                            "&8&l >> &7/suits"
+                    );
                 }
             }
         }

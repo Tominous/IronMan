@@ -18,6 +18,7 @@ public class SuitManager {
     }
 
     public void apply(Player player) {
+        Data.buildingSuit.add(player);
         Delay.until(20*3, () -> {
             setBoots(player);
             player.sendMessage(Chat.jarvis + "Suit percentage: 25%");
@@ -37,14 +38,23 @@ public class SuitManager {
             setHelemet(player);
             player.sendMessage(Chat.jarvis + "Suit percentage: 100%");
         });
+        Data.buildingSuit.remove(player);
+        Data.Suit.add(player);
     }
 
     public void eject(Player player) {
+
+        if (Data.buildingSuit.contains(player)) {
+            Chat.msg(player, Chat.jarvis + "&4Suit not built yet!");
+            return;
+        }
+
         player.getInventory().setHelmet(null);
         player.getInventory().setChestplate(null);
         player.getInventory().setLeggings(null);
         player.getInventory().setBoots(null);
         Chat.msg(player, Chat.jarvis + "&cEjected from suit!");
+        Data.Suit.remove(player);
         player.setVelocity(new Vector(0, 1, -3));
 
         double x = player.getLocation().getX();

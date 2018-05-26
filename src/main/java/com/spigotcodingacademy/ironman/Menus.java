@@ -31,7 +31,6 @@ public class Menus {
                                 clicker.closeInventory();
                                 return;
                             }
-                            Data.Suit.add(clicker);
                             Main.getSuitManager().apply(clicker);
                             clicker.sendMessage(Chat.jarvis + "Mark 1 is on its way!");
                             clicker.closeInventory();
@@ -52,8 +51,6 @@ public class Menus {
                                 clicker.closeInventory();
                                 return;
                             }
-
-                            Data.Suit.add(clicker);
                             Main.getSuitManager().apply(clicker);
                             clicker.sendMessage(Chat.jarvis + "Mark 42 is on its way!");
                             clicker.closeInventory();

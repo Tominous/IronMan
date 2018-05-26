@@ -3,6 +3,7 @@ package com.spigotcodingacademy.ironman.manager;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Data {
 
@@ -11,5 +12,4 @@ public class Data {
     public static ArrayList<Player> isLowHealth = new ArrayList<>();
     public static ArrayList<Player> isOnFire = new ArrayList<>();
     public static ArrayList<Player> isPoisened = new ArrayList<>();
-
 }

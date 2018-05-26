@@ -37,8 +37,8 @@ public class SuitManager {
         Delay.until(20*6, () -> {
             setHelemet(player);
             player.sendMessage(Chat.jarvis + "Suit percentage: 100%");
+            Data.buildingSuit.remove(player);
         });
-        Data.buildingSuit.remove(player);
         Data.Suit.add(player);
     }
 

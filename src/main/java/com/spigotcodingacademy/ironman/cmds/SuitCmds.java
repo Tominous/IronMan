@@ -74,46 +74,38 @@ public class SuitCmds implements CommandExecutor {
 
             if (args.length == 3) {
                 if (args[0].equalsIgnoreCase("set")) {
-                    Player target = Bukkit.getServer().getPlayer(args[1]);
-                    String suit = args[2];
-                    if (args[1] == null) {
-                        Chat.msg(
-                                player,
-                                Chat.prefix + "&cError! Incorrect usage!",
-                                "&8&l >> &7/suits set <Player> <SuitName>"
-                        );
-                        return true;
-                    }
+                    if (player.hasPermission("ironman.suits.set")) {
 
-                    if (args[2] == null) {
-                        Chat.msg(
-                                player,
-                                Chat.prefix + "&cError! Incorrect usage!",
-                                "&8&l >> &7/suits set <Player> <SuitName>"
-                        );
-                        return true;
-                    }
+                        if (args.length < 3) {
+                            Chat.msg(
+                                    player,
+                                    Chat.prefix + "&cIncorrect usage detected!",
+                                    Chat.prefix + "&6/suits set <Player> <SuitName>"
+                                    );
+                        }
 
-                    if (target == null) {
-                        Chat.msg(
-                                player,
-                                Chat.prefix + "&cError! Player is not online or does not exist!"
-                        );
-                        return true;
-                    }
+                        Player target = Bukkit.getServer().getPlayer(args[1]);
+                        String suit = args[2];
+                        if (target == null) {
+                            Chat.msg(
+                                    player,
+                                    Chat.prefix + "&cError! Player is not online or does not exist!"
+                            );
+                            return true;
+                        }
 
-                    if (Data.Suit.contains(target)) {
-                        Chat.msg(player, Chat.prefix + "&6Suit set by: &a" + ((Player) sender).getDisplayName() + "&6!");
-                        Main.getSuitManager().eject(target);
-                        Main.getSuitManager().apply(target);
-                        return true;
-                    }
+                        if (Data.Suit.contains(target)) {
+                            Chat.msg(player, Chat.prefix + "&6Suit set by: &a" + ((Player) sender).getDisplayName() + "&6!");
+                            Main.getSuitManager().eject(target);
+                            Main.getSuitManager().apply(target);
+                            return true;
+                        }
 
-                    if (suit.equalsIgnoreCase("mark1")) {
-                        Chat.msg(player, Chat.prefix + "&6Suit set by: &a" + ((Player) sender).getDisplayName() + "&6!");
-                        Main.getSuitManager().apply(target);
+                        if (suit.equalsIgnoreCase("mark1")) {
+                            Chat.msg(player, Chat.prefix + "&6Suit set by: &a" + ((Player) sender).getDisplayName() + "&6!");
+                            Main.getSuitManager().apply(target);
+                        }
                     }
-
                 }
             }
         }

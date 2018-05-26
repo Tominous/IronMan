@@ -3,7 +3,6 @@ package com.spigotcodingacademy.ironman.cmds;
 import com.spigotcodingacademy.ironman.Main;
 import com.spigotcodingacademy.ironman.Menus;
 import com.spigotcodingacademy.ironman.manager.Data;
-import com.spigotcodingacademy.ironman.manager.SuitManager;
 import com.spigotcodingacademy.ironman.utils.Chat;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

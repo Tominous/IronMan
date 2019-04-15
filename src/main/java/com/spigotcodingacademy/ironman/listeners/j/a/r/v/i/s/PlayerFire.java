@@ -8,7 +8,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
+import java.util.ArrayList;
+
 public class PlayerFire implements Listener {
+
+    ArrayList<Player> fireCooldown = new ArrayList<>();
 
     @EventHandler
     public void onPlayerFire(EntityDamageEvent event) {
@@ -17,6 +21,10 @@ public class PlayerFire implements Listener {
             if (Data.Suit.contains(player)) {
                 if (event.getCause() == EntityDamageEvent.DamageCause.FIRE || event.getCause() == EntityDamageEvent.DamageCause.FIRE_TICK) {
                     if (!Data.isOnFire.contains(player)) {
+                        if (fireCooldown.contains(player)) {
+                            return;
+                        }
+
                         Data.isOnFire.add(player);
                         Chat.msg(
                                 player,
@@ -26,7 +34,12 @@ public class PlayerFire implements Listener {
                         Delay.until(40, () -> {
                             player.setFireTicks(0);
                             Chat.msg(player, Chat.jarvis + "&6Fire suppression successful!");
+                            fireCooldown.add(player);
                             Data.isOnFire.remove(player);
+                        });
+
+                        Delay.until(100, () -> {
+                            fireCooldown.remove(player);
                         });
                     }
                 }

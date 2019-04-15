@@ -15,7 +15,7 @@ public class PlayerHeal implements Listener{
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
             if (Data.Suit.contains(player)) {
-                if (player.getHealth() == 11) {
+                if (player.getHealth() >= 11 && player.getHealth() < 12) {
                     Data.isLowHealth.remove(player);
                     player.removePotionEffect(PotionEffectType.REGENERATION);
                     Chat.msg(player, Chat.jarvis + "&6Vital signs normalizing.");

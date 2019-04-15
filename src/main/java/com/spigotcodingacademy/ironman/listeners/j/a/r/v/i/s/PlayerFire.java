@@ -38,9 +38,7 @@ public class PlayerFire implements Listener {
                             Data.isOnFire.remove(player);
                         });
 
-                        Delay.until(100, () -> {
-                            fireCooldown.remove(player);
-                        });
+                        Delay.until(100, () -> fireCooldown.remove(player));
                     }
                 }
 

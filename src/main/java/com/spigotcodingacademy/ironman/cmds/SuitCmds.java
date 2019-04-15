@@ -100,8 +100,15 @@ public class SuitCmds implements CommandExecutor {
                             return true;
                         }
 
-                        if (suit.equalsIgnoreCase("mark1")) {
+                        if (suit.equalsIgnoreCase("mk1")) {
                             Chat.msg(player, Chat.prefix + "&6Suit set by: &a" + ((Player) sender).getDisplayName() + "&6!");
+                            Data.suitAssigned.put(target, "MK1");
+                            Main.getSuitManager().apply(target);
+                        }
+
+                        if (suit.equalsIgnoreCase("mk42")) {
+                            Chat.msg(player, Chat.prefix + "&6Suit set by: &a" + ((Player) sender).getDisplayName() + "&6!");
+                            Data.suitAssigned.put(target, "MK42");
                             Main.getSuitManager().apply(target);
                         }
                     }

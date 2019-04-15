@@ -1,6 +1,5 @@
 package com.spigotcodingacademy.ironman.utils;
 
-import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -9,9 +8,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IVenomX (BantaGaming)
- */
 public class ItemStackBuilder {
 
     private ItemStack itemStack;

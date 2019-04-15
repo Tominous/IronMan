@@ -18,7 +18,6 @@ public class SuitCmds implements CommandExecutor {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
 
-        // /suit <Player> <SuitName>
         if (cmd.getName().equalsIgnoreCase("suits")) {
             if (!player.hasPermission("ironman.suits")) {
                 Chat.msg(player, Chat.perm);
@@ -57,7 +56,8 @@ public class SuitCmds implements CommandExecutor {
                 Chat.msg(
                         player,
                         Chat.prefix + "&7Suit list:",
-                        "&8&l >> &7Mk 1"
+                        "&8&l >> &7Mk 1",
+                        "&8&l >> &7Mk 42"
                 );
                 return true;
             }

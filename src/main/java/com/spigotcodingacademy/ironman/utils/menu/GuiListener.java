@@ -7,10 +7,6 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 
-
-/**
- * Created by IVenomX (BantaGaming)
- */
 public class GuiListener implements Listener {
 
     @EventHandler

@@ -8,9 +8,6 @@ import com.spigotcodingacademy.ironman.utils.menu.GuiItem;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-/**
- * Created by IVenomX (BantaGaming)
- */
 public class Menus {
 
     public static void createTestMenu(Player player) {

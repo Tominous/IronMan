@@ -14,9 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by IVenomX (BantaGaming)
- */
 public class Gui {
 
     @Getter

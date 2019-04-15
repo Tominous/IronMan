@@ -30,6 +30,7 @@ public class Menus {
                             }
                             Main.getSuitManager().apply(clicker);
                             clicker.sendMessage(Chat.jarvis + "Mark 1 is on its way!");
+                            Data.suitAssigned.put(player, "MK1");
                             clicker.closeInventory();
                         }
                 ),
@@ -50,6 +51,7 @@ public class Menus {
                             }
                             Main.getSuitManager().apply(clicker);
                             clicker.sendMessage(Chat.jarvis + "Mark 42 is on its way!");
+                            Data.suitAssigned.put(player, "MK42");
                             clicker.closeInventory();
                         }
                 )

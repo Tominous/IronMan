@@ -26,7 +26,6 @@ public class PlayerLowHealth implements Listener {
                             Chat.jarvis + "&6Adrenaline has been administered."
                     );
 
-
                     new BukkitRunnable() {
                         @Override
                         public void run() {

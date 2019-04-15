@@ -56,8 +56,8 @@ public class SuitCmds implements CommandExecutor {
                 Chat.msg(
                         player,
                         Chat.prefix + "&7Suit list:",
-                        "&8&l >> &7Mk 1",
-                        "&8&l >> &7Mk 42"
+                        "&8&l >> &7Mk1",
+                        "&8&l >> &7Mk42"
                 );
                 return true;
             }

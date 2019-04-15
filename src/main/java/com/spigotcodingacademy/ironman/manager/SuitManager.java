@@ -40,6 +40,7 @@ public class SuitManager {
             Data.buildingSuit.remove(player);
         });
         Data.Suit.add(player);
+        player.setAllowFlight(true);
     }
 
     public void eject(Player player) {
@@ -64,6 +65,8 @@ public class SuitManager {
         Location location = new Location(player.getWorld(),x, y, z);
 
         Delay.until(20, () -> player.getWorld().createExplosion(location, 0));
+        player.setAllowFlight(false);
+        player.setFlying(false);
 
     }
 

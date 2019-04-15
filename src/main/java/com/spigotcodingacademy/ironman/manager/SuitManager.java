@@ -68,21 +68,52 @@ public class SuitManager {
         player.setAllowFlight(false);
         player.setFlying(false);
 
+        Data.suitAssigned.remove(player, "MK1");
+        Data.suitAssigned.remove(player, "MK42");
+
     }
 
     private void setHelemet(Player player) {
-        player.getInventory().setHelmet(new ItemStackBuilder(Material.IRON_HELMET).setName("&8&lMark 1").build());
+        if (Data.suitAssigned.get(player).equals("MK1")) {
+            player.getInventory().setHelmet(new ItemStackBuilder(Material.IRON_HELMET).setName("&8&lMark 1").build());
+            return;
+        }
+
+        if (Data.suitAssigned.get(player).equals("MK42")) {
+            player.getInventory().setHelmet(new ItemStackBuilder(Material.DIAMOND_HELMET).setName("&8&lMark 42").build());
+        }
     }
 
     private void setChestplate(Player player) {
-        player.getInventory().setChestplate(new ItemStackBuilder(Material.IRON_CHESTPLATE).setName("&8&lMark 1").build());
+        if (Data.suitAssigned.get(player).equals("MK1")) {
+            player.getInventory().setChestplate(new ItemStackBuilder(Material.IRON_CHESTPLATE).setName("&8&lMark 1").build());
+            return;
+        }
+
+        if (Data.suitAssigned.get(player).equals("MK42")) {
+            player.getInventory().setChestplate(new ItemStackBuilder(Material.DIAMOND_CHESTPLATE).setName("&8&lMark 42").build());
+        }
     }
 
     private void setLeggings(Player player) {
-        player.getInventory().setLeggings(new ItemStackBuilder(Material.IRON_LEGGINGS).setName("&8&lMark 1").build());
+        if (Data.suitAssigned.get(player).equals("MK1")) {
+            player.getInventory().setLeggings(new ItemStackBuilder(Material.IRON_LEGGINGS).setName("&8&lMark 1").build());
+            return;
+        }
+
+        if (Data.suitAssigned.get(player).equals("MK42")) {
+            player.getInventory().setLeggings(new ItemStackBuilder(Material.DIAMOND_LEGGINGS).setName("&8&lMark 42").build());
+        }
     }
 
     private void setBoots(Player player) {
-        player.getInventory().setBoots(new ItemStackBuilder(Material.IRON_BOOTS).setName("&8&lMark 1").build());
+        if (Data.suitAssigned.get(player).equals("MK1")) {
+            player.getInventory().setBoots(new ItemStackBuilder(Material.IRON_BOOTS).setName("&8&lMark 1").build());
+            return;
+        }
+
+        if (Data.suitAssigned.get(player).equals("MK42")) {
+            player.getInventory().setBoots(new ItemStackBuilder(Material.DIAMOND_BOOTS).setName("&8&lMark 42").build());
+        }
     }
 }

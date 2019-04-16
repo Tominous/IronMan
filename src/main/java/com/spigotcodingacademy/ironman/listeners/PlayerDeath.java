@@ -34,5 +34,7 @@ public class PlayerDeath implements Listener {
         Data.Suit.remove(player);
         Data.isLowHealth.remove(player);
         Data.buildingSuit.remove(player);
+        player.setAllowFlight(false);
+        player.setFlying(false);
     }
 }

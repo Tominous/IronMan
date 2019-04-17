@@ -2,6 +2,7 @@ package com.spigotcodingacademy.ironman;
 
 import com.spigotcodingacademy.ironman.cmds.IronManCmds;
 import com.spigotcodingacademy.ironman.cmds.SuitCmds;
+import com.spigotcodingacademy.ironman.cmds.suits.mk42;
 import com.spigotcodingacademy.ironman.listeners.PlayerJoin;
 import com.spigotcodingacademy.ironman.listeners.PlayerDeath;
 import com.spigotcodingacademy.ironman.listeners.PlayerLeave;
@@ -37,6 +38,7 @@ public class Main extends JavaPlugin{
 
         getCommand("ironman").setExecutor(new IronManCmds());
         getCommand("suits").setExecutor(new SuitCmds());
+        getCommand("mk42").setExecutor(new mk42());
 
     }
 }

@@ -10,10 +10,15 @@ import com.spigotcodingacademy.ironman.listeners.PlayerMoveArmourListener;
 import com.spigotcodingacademy.ironman.listeners.j.a.r.v.i.s.PlayerFire;
 import com.spigotcodingacademy.ironman.listeners.j.a.r.v.i.s.PlayerHeal;
 import com.spigotcodingacademy.ironman.listeners.j.a.r.v.i.s.PlayerLowHealth;
+import com.spigotcodingacademy.ironman.manager.Data;
 import com.spigotcodingacademy.ironman.manager.SuitManager;
+import com.spigotcodingacademy.ironman.utils.Chat;
 import com.spigotcodingacademy.ironman.utils.menu.GuiListener;
 import lombok.Getter;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
 
 public class Main extends JavaPlugin{
 
@@ -40,5 +45,23 @@ public class Main extends JavaPlugin{
         getCommand("suits").setExecutor(new SuitCmds());
         getCommand("mk42").setExecutor(new mk42());
 
+    }
+
+    @Override
+    public void onDisable() {
+        for (Player players : Data.Suit) {
+            Data.Suit.remove(players);
+            players.getInventory().setHelmet(null);
+            players.getInventory().setChestplate(null);
+            players.getInventory().setLeggings(null);
+            players.getInventory().setBoots(null);
+            players.setFlying(false);
+            players.setAllowFlight(false);
+            Chat.msg(players, Chat.prefix + "&7Armour removed due to reload!");
+            Chat.msg(players, Chat.prefix + "&7Effects removed due to reload!");
+            for (PotionEffect effects : players.getActivePotionEffects()) {
+                players.removePotionEffect(effects.getType());
+            }
+        }
     }
 }

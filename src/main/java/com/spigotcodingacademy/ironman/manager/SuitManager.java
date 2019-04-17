@@ -7,6 +7,8 @@ import com.spigotcodingacademy.ironman.utils.ItemStackBuilder;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 public class SuitManager {
@@ -71,6 +73,10 @@ public class SuitManager {
         Data.suitAssigned.remove(player, "MK1");
         Data.suitAssigned.remove(player, "MK42");
 
+        player.removePotionEffect(PotionEffectType.SLOW);
+        player.removePotionEffect(PotionEffectType.WATER_BREATHING);
+        player.removePotionEffect(PotionEffectType.DOLPHINS_GRACE);
+
     }
 
     private void setHelemet(Player player) {
@@ -81,17 +87,20 @@ public class SuitManager {
 
         if (Data.suitAssigned.get(player).equals("MK42")) {
             player.getInventory().setHelmet(new ItemStackBuilder(Material.DIAMOND_HELMET).setName("&8&lMark 42").build());
+            player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, Integer.MAX_VALUE, 1));
         }
     }
 
     private void setChestplate(Player player) {
         if (Data.suitAssigned.get(player).equals("MK1")) {
             player.getInventory().setChestplate(new ItemStackBuilder(Material.IRON_CHESTPLATE).setName("&8&lMark 1").build());
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, Integer.MAX_VALUE, 1));
             return;
         }
 
         if (Data.suitAssigned.get(player).equals("MK42")) {
             player.getInventory().setChestplate(new ItemStackBuilder(Material.DIAMOND_CHESTPLATE).setName("&8&lMark 42").build());
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, Integer.MAX_VALUE, 0));
         }
     }
 
@@ -114,6 +123,7 @@ public class SuitManager {
 
         if (Data.suitAssigned.get(player).equals("MK42")) {
             player.getInventory().setBoots(new ItemStackBuilder(Material.DIAMOND_BOOTS).setName("&8&lMark 42").build());
+            player.addPotionEffect(new PotionEffect(PotionEffectType.DOLPHINS_GRACE, Integer.MAX_VALUE, 1));
         }
     }
 }

@@ -36,17 +36,6 @@ public class SuitCmds implements CommandExecutor {
                 return true;
             }
 
-            if (args[0].equalsIgnoreCase("check")) {
-                if (Data.buildingSuit.contains(player)) {
-                    player.sendMessage(Chat.prefix + "Building suit: YES");
-                    return true;
-                }
-                if (!Data.buildingSuit.contains(player)) {
-                    player.sendMessage(Chat.prefix + "Building suit: NO");
-                    return true;
-                }
-            }
-
             if (args[0].equalsIgnoreCase("menu")) {
                 Menus.createTestMenu(player);
                 return true;

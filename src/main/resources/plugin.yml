@@ -6,3 +6,4 @@ commands:
       aliases: [im]
    suits:
       aliases: [suit]
+   mk42:
